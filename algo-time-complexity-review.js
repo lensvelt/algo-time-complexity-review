@@ -1,17 +1,23 @@
 /////////// Prompt 1 ///////////
+///LINEAR - N DEFINED BY NUMBER OF ELEMENTS IN THE ARRAY
+///PROBLEM SIZE: ARRAY LENGTH
+///NO. OF OPERATIONS: 2N + 2
 /////////// time complexity: 
 function findMax(array){
-  var max = -Infinity;
-  for (var i = 0; i < array.length; i++){
-    if (array[i] > max){
-      max = array[i];
+  var max = -Infinity; //1
+  for (var i = 0; i < array.length; i++){ //N
+    if (array[i] > max){ //1
+      max = array[i]; //0 OR 1
     }
   }
-  return max; 
+  return max; //1
 }
 
+//2N + 2 --> LINEAR
 
 /////////// Prompt 2 ///////////
+///LINEAR - N DEFINED BY NUMBER OF ELEMENTS IN THE ARRAY
+///PROBLEM SIZE: ARRAY LENGTH
 /////////// time complexity: 
 function contains(array, target){
   return array.indexOf(target) > -1;
@@ -19,6 +25,10 @@ function contains(array, target){
 
 
 /////////// Prompt 3 ///////////
+///LINEAR - N DEFINED BY NUMBER OF ELEMENTS IN THE ARRAY
+///PROBLEM SIZE: ARRAY LENGTH, OPERATIONS IN SERIES
+///NO. OF OPERATIONS: N + N
+///TC: 2N
 /////////// time complexity: 
 function partialContains(array, target, start){
   return array.slice(start).indexOf(target) > -1;
@@ -26,15 +36,23 @@ function partialContains(array, target, start){
 
 
 /////////// Prompt 4 ///////////
+///CONSTANT
+///PROBLEM SIZE NEVER CHANGES
+///NO OF OPERATIONS: 5 OPERATIONS
 /////////// time complexity: 
 function square(array){
-  for (var i = 0; i < 3; i++){
-    array[i] = array[i] * array[i];
+  for (var i = 0; i < 3; i++){ //3 (ALWAYS)
+    array[i] = array[i] * array[i]; //1
   }
-  return array;
+  return array; //1
 }
 
 /////////// Prompt 5 ///////////
+//////LINEAR - N DEFINED BY NUMBER OF ELEMENTS IN THE ARRAY
+///PROBLEM SIZE: ARRAY LENGTH
+///NO. OF OPERATIONS: N
+///TC: 
+
 /////////// time complexity: 
 function repeat(array){
   var repeat = [];
@@ -50,14 +68,14 @@ function repeat(array){
 
 
 /////////// Prompt 6 ///////////
-/////////// time complexity: 
+/////////// time complexity: LINEAR
 function gcf(num1, num2){
   if (num1 > num2){ //this ensures num1 is the smaller number
     var temp = num1;
     num1 = num2;
     num2 = temp;
   }
-  for (var i = num1; i > 1; i--){
+  for (var i = num1; i > 1; i--){ //NUM1 TIMES, WHICH IS THE SMALLER OF NUM1 AND NUM2
     if (num1 % i === 0 && num2 % i === 0){
       return i;
     }
@@ -67,6 +85,7 @@ function gcf(num1, num2){
 
 
 /////////// Prompt 7 ///////////
+///QUADRATIC - NESTED LOOPS - 3N + 1/2(N^2 - N)
 /////////// time complexity: 
 function countChar(string){
   var counts = {};
@@ -88,6 +107,8 @@ function countChar(string){
 
 
 /////////// Prompt 8 ///////////
+///DRAVW A TREE FOR RECURSIVE FUNCTIONS TO FIGURE OUT WHATS HAPPENING
+///LINEAR
 /////////// time complexity: 
 var factorial = function(num){
   if (num < 0){
@@ -102,6 +123,9 @@ var factorial = function(num){
 
 
 /////////// Prompt 9 ///////////
+///BEST OF 3 TOURNAMENT - GO FROM 81 T0 1
+///LOGARITHMIC TIME COMPLEXITY - DIVIDING BY 3 EACH TIME
+///AS LONG AS DIVIDING BY SAME THING EACH TIME, LOGARITHMIC
 /////////// time complexity: 
 function tournament(players){
   var results;
@@ -142,6 +166,7 @@ function allPasswords(allowedChars, maxLength){
 
 
 /////////// Prompt 11 ///////////
+///LOGARITHMIC - DIVIDING BY THE SAME NUMBER EVERY TIME
 /////////// time complexity: 
 function findColor(quadTree, coordinates){
   //a quad tree is a tree where each node has 4 children 
@@ -167,6 +192,7 @@ function findColor(quadTree, coordinates){
     }
   }
 
+//CONSTANT TIME FUNCTION USING MATH
   function findQuadrant(quadTree, coordinates){
     var y = (quadTree.coordinates.top + quadTree.coordinates.bottom)/2;
     var x = (quadTree.coordinates.left + quadTree.coordinates.right)/2;
